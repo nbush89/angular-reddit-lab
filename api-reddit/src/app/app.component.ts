@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
     this.reddits.getReddit().subscribe((data:Reddit)=>{
       this.reddit = {...data};
       console.log(data.kind);
+      console.log(data.title);
       // console.log(data.media_embed);
       // console.log(data.url);
       // data.children.forEach(data=>console.log(data.title));
