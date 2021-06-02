@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RedditService, Reddit } from './reddit.service';
+import {RedditService, Children} from './reddit.service';
 
 @Component({
   selector: 'app-root',
@@ -7,19 +7,14 @@ import { RedditService, Reddit } from './reddit.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  reddit?: Reddit;
+  animalPost: Children[] = [];
   constructor(public reddits: RedditService){}
-  ngOnInit(){
-    this.reddits.getReddit().subscribe((data:Reddit)=>{
-      this.reddit = {...data};
-      console.log(data.kind);
-      console.log(data.title);
-      // console.log(data.media_embed);
-      // console.log(data.url);
-      // data.children.forEach(data=>console.log(data.title));
-      // for(let data of data.children){
-      //   console.log(data.title)
-      // }
+  ngOnInit():void{
+    this.reddits.getReddit().subscribe((data)=>{
+      this.animalPost = data.data.children;
+      console.log(data.data.children[0].data.title);
+      console.log(data.data.children[0].data.thumbnail);
+      console.log(data.data.children[0].data.permalink);
     })
   }
 }

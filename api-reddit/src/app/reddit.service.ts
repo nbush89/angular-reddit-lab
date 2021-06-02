@@ -3,18 +3,19 @@ import { Injectable } from '@angular/core';
 
 export interface Reddit{
   kind: string;
-  data: object;
-  modhash: string;
-  dist: number;
-  children: Post[];
-  title: string;
-
+  data: Data;
 }
-interface Post{
+
+export interface Data{
+  children: Children[];
+}
+export interface Children{
+  data: PostData;
+}
+interface PostData{
   title: string;
+  thumbnail: string;
   permalink: string;
-  preview: object;
-  
 
 }
 

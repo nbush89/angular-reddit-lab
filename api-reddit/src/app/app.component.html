@@ -1,14 +1,10 @@
-<!-- <h1 class="title" *ngFor="let titles of title"></h1> -->
-
-<div *ngFor="let  titles of ">
-
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<h1>Reddit (Kind Of)</h1>
+<div class="content">
+    <div class="posts" *ngFor="let  child of animalPost; let i = index">
+        <h2>{{child.data.title}}</h2>
+        <a href="https://www.reddit.com/{{child.data.permalink}}">Click here to view Reddit post</a>
+        <a href="https://www.reddit.com/{{child.data.permalink}}"><img src="{{child.data.thumbnail}}"></a>
+    </div>
 </div>
-
-<!-- Example
-<div class="names" *ngFor="let person of people">
-    <h1>{{person.name}}</h1>
-    <h2>{{person.relation}}</h2>
-    <h3>{{person.age}}</h3>
-  
-  </div> -->
