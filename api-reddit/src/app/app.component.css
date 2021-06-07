@@ -1,8 +1,8 @@
 .content{
     display: flex;
-    flex-direction: row;
+  //default direction for flex is row so you dont need this
     flex-wrap: wrap;
-    justify-content: center;
+  //the justify content wont do anything here becuase its only centering the direct child, which is .posts
     font-family: 'Roboto', sans-serif;
 
 }
@@ -14,9 +14,10 @@ h1{
 .posts{
     display: flex;
     flex-direction: column;
+    align-items: center; //this will center the post content within the grey box, remember you need to switch whether you use justify-content or align-items depending which flex-direction is applied
     border-radius: 10px;
     width: 550px;
-    height: 400px;
+    min-height: 400px; //setting a min-height will allow the box to stretch bigger if it needs to
     margin: 15px;
     background-color: rgb(235, 235, 235);
     box-shadow: 2px 2px 2px rgb(151, 151, 151);
